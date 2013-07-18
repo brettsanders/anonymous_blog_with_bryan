@@ -1,0 +1,20 @@
+
+  <h2>Create a Post</h2>
+  <form action="/post/<%= @post.id %>" method="post" id="create_post">
+    <p><input type="text" name="post[title]" id="title" value="<%= @post.title %>"></p>
+    <textarea rows="4" cols="50" form="create_post" name="post[body]" maxlength="100" id="body"  required><%= @post.body %></textarea>
+    <br>
+    <p>Add Tags (separate by commas, ex: "DBC, Learning To Code, Sinatra etc")</p>
+    <p><input type="text" name="tag[name]"></p>
+    <br>
+
+    <p>Add Tags That Already Exist</p>
+    <% if @tags %>
+      <% @tags.each do |tag| %>
+        <label for="<%= tag.name %>"> <%= tag.name %> </label>
+        <p><input id="<%= tag.id %>" type="checkbox" name="old_tags[<%= tag.name %>]" value="<%= tag.name %>" <%= "checked" if @post.tags.include?(tag) %> ></p>
+      <% end %>
+    <% end %>
+    <input type="submit">
+  </form>
+

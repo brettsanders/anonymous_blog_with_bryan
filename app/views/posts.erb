@@ -1,0 +1,10 @@
+<ul>
+  <h2>Posts</h2>
+  <% @posts.each do |post| %>
+      <li>
+        <a href="/post/<%= post.id %>"><%= post.title %></a>
+        <a class="modify" href="/post/<%= post.id %>/edit">Edit</a>
+        <a class="modify" href="/post/<%= post.id %>/delete">Delete</a>
+      </li>
+    <% end %>
+</ul>
