@@ -66,8 +66,14 @@ post '/post/:id' do
 end
 
 # Delete
-post '/post/:id/delete' do
-  @post = post.find(params[:id])
+get '/post/:id/delete' do
+  # go through each tag of this user 
+  # if no other users are including that tag
+  # delete it
+  
+
+
+  @post = Post.find(params[:id])
   @post.destroy
   redirect '/'
 end
