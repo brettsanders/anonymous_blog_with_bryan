@@ -4,7 +4,9 @@
       <li>
         <a href="/post/<%= post.id %>"><%= post.title %></a>
         <a class="modify" href="/post/<%= post.id %>/edit">Edit</a>
-        <a class="modify" href="/post/<%= post.id %>/delete">Delete</a>
+        <form action="/post/<%=post.id%>/delete" method="POST">
+          <input type="submit" value="Delete">
+        <form>
       </li>
     <% end %>
 </ul>
