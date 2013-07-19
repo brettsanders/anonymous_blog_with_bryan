@@ -6,7 +6,12 @@
   <% @post.tags.each do |tag| %>
     <li>
       <a href="/tag/<%= tag.id %>"><%= tag.name %></a>
+
     </li>
     
   <% end %>
 </ul>
+
+<a class="modify" href="/post/<%= @post.id %>/edit">Edit this post</a>
+<a href="/" class="back">Home</a>
+

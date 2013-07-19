@@ -2,8 +2,10 @@
 <h1>Tag Name: <%= @tag.name %></h1>
 
 <ul>
+  <h3>Posts</h3>
   <% @tag.posts.each do |post| %>
     <li><a href="/post/<%= post.id %>"><%= post.title %></a></li>
   <% end %>
 </ul>
 
+<a href="/" class="back">Home</a>

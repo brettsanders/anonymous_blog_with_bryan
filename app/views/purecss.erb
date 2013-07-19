@@ -1,0 +1,74 @@
+<div class="pure-g-r" id="layout">
+    <div class="sidebar pure-u">
+        <header class="header">
+            <hgroup>
+                <h1 class="brand-title">Anonymous Blog</h1>
+                <h2 class="brand-tagline">Creating a DevBootcamp Blog</h2>
+            </hgroup>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="pure-button" href="http://devbootcamp.com/">Create Post</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="pure-button" href="http://socrates.devbootcamp.com/">Manage Posts</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="pure-u-1">
+        <div class="content">
+            <!-- A wrapper for all the blog posts -->
+            <div class="posts">
+                <h1 class="content-subhead">Brett Sanders and Bryan Hancock</h1>
+                
+                <% @tags.each do |tag| %>
+                    <a class="post-category post-category-pure" href="#"><%= tag.name %></a>
+                <% end %>
+
+                <!-- A single blog post -->
+                <% @posts.each do |post| %>
+                    <section class="post">
+                        <header class="post-header">
+                            <img class="post-avatar"
+                                 alt="Bryan's avatar" src="https://secure.gravatar.com/avatar/9bca1cb589a9a99ec6b6f6cb6095c740.png?r=PG&d=mm&s=50"
+                                 height="48" width="48">
+                            <img class="post-avatar"
+                                 alt="Brett's avatar" src="https://secure.gravatar.com/avatar/8e9882b45a3625bb2f5923e42adb2efc.png?r=PG&d=mm&s=98"
+                                 height="48" width="48">
+
+                            <h2 class="post-title"><%= post.title %></h2>
+                            
+                            <p class="post-meta">
+                                By <a href="#" class="post-author">Bryan and Brett</a> TAGS 
+                                <% post.tags.each do |tag| %>
+                                    <a class="post-category post-category-design" href="#"><%= tag.name %></a>
+                                <% end %>
+                            </p>
+                        </header>
+
+                        <div class="post-description">
+                            <p>
+                                <%= post.body %>
+                            </p>
+                        </div>
+                    </section>
+                <% end %>
+            </div>
+
+            
+
+            <footer class="footer">
+                <div class="pure-menu pure-menu-horizontal pure-menu-open">
+                    <ul>
+                        <li><a href="http://purecss.io/layouts/blog/">pure</a></li>
+                        <li><a href="http://devbootcamp.com/">devbootcamp</a></li>
+                        <li><a href="http://socrates.devbootcamp.com/">socrates</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
