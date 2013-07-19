@@ -1,0 +1,23 @@
+<header>  
+  <a href="/create_post">+ Create a Post</a> | 
+  <a href="/posts">Manage Posts</a>
+</header>
+
+
+<div class="posts">
+  <h2>Posts</h2>
+  <ul>
+    <% @posts.each do |post| %>
+      <li><a href="/post/<%= post.id %>"><%= post.title %></a></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="tags">
+  <h2>Tags</h2>
+  <ul>
+    <% @tags.each do |tag| %>
+      <li><a href="/tag/<%= tag.id %>"><%= tag.name %></a></li>
+    <% end %>
+  </ul>
+</div>

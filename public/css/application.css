@@ -175,55 +175,7 @@ a:focus {
     }
 }
 
-
-
-/*.posts {
-  float: left;
-  background-color: yellow;
-  margin: 15px;
-  padding:10px;
+.pure-button-round {
+    border-radius: 10px;
+    text-shadow: 1 3px 1px rgba(0, 0, 0, 0.2);
 }
-
-.tags {
-  float: left;
-  background-color: red;
-  margin: 15px;
-  padding:10px;
-}
-
-.container {
-  margin: 20px auto;
-  height: 800px; 
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
-}
-th {
-  text-align: left;
-}
-
-header {
-  /*float: left;*/
-  /*width: 100%;
-
-}
-*/
-/*a {
-  text-decoration: none;
-  color: blue;
-}
-
-ul {
-  list-style: none;
-}
-
-.modify {
-  color: red;
-  font-size: 12px;
-}
-
-a.back {
-  color: red;
-  text-decoration: underline;
-}
-*/

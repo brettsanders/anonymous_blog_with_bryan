@@ -1,23 +1,43 @@
-<header>  
-  <a href="/create_post">+ Create a Post</a> | 
-  <a href="/posts">Manage Posts</a>
-</header>
+<div class="pure-u-1">
+    <div class="content">
+        <!-- A wrapper for all the blog posts -->
+        <div class="posts">
+            <h1 class="content-subhead">Brett Sanders and Bryan Hancock</h1>
+            
+            <% @tags.each do |tag| %>
+                <a class="post-category post-category-pure" href="#"><%= tag.name %></a>
+            <% end %>
 
+            <!-- A single blog post -->
+            <% @posts.each do |post| %>
+                <section class="post">
+                    <header class="post-header">
+                        <img class="post-avatar"
+                             alt="Bryan's avatar" src="https://secure.gravatar.com/avatar/9bca1cb589a9a99ec6b6f6cb6095c740.png?r=PG&d=mm&s=50"
+                             height="48" width="48">
+                        <img class="post-avatar"
+                             alt="Brett's avatar" src="https://secure.gravatar.com/avatar/8e9882b45a3625bb2f5923e42adb2efc.png?r=PG&d=mm&s=98"
+                             height="48" width="48">
 
-<div class="posts">
-  <h2>Posts</h2>
-  <ul>
-    <% @posts.each do |post| %>
-      <li><a href="/post/<%= post.id %>"><%= post.title %></a></li>
-    <% end %>
-  </ul>
-</div>
+                        <h2 class="post-title"><%= post.title %></h2>
+                        
+                        <p class="post-meta">
+                            By <a href="#" class="post-author">Bryan and Brett</a> TAGS 
+                            <% post.tags.each do |tag| %>
+                                <a class="post-category post-category-design" href="#"><%= tag.name %></a>
+                            <% end %>
+                        </p>
+                    </header>
 
-<div class="tags">
-  <h2>Tags</h2>
-  <ul>
-    <% @tags.each do |tag| %>
-      <li><a href="/tag/<%= tag.id %>"><%= tag.name %></a></li>
-    <% end %>
-  </ul>
-</div>
+                    <div class="post-description">
+                        <p>
+                            <%= post.body %>
+                        </p>
+                    </div>
+                </section>
+            <% end %>
+        </div>
+
+            
+
+            
